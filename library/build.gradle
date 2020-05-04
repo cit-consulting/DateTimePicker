@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+
 group = 'com.github.lany192'
+version = "1.0.5-CITC1"
+
 android {
     compileSdkVersion 28
 
@@ -8,7 +10,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0.0"
+        versionName project.version
     }
 
     buildTypes {
@@ -28,3 +30,5 @@ dependencies {
     // 源码地址 https://github.com/lany192/NumberPicker
     api 'com.github.lany192:NumberPicker:1.0.3'
 }
+
+apply from: 'citc-publish-android-oss-library.gradle'

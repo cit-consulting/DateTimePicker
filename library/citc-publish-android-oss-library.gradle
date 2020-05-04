@@ -1,0 +1,22 @@
+apply plugin: 'maven-publish'
+
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                url "https://maven1.citc.ru/content/repositories/citc-opensource/"
+                credentials {
+                    username project.properties['mavenPublishUser.maven1.citc.ru']
+                    password project.properties['mavenPublishPassword.maven1.citc.ru']
+                }
+            }
+        }
+
+        publications {
+            release(MavenPublication) {
+                from components.release
+                artifactId = rootProject.name
+            }
+        }
+    }
+}
